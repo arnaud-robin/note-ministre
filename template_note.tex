@@ -1,0 +1,106 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+%basic cover letter template
+\documentclass[10pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amssymb, amsmath, graphicx}
+\usepackage{lipsum} % for Lorem ipsum text
+
+\usepackage{fontspec}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\titleformat{\section}{\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\footnotesize}{\thesection}{1em}{}
+\titleformat{\subsubsection}{\footnotesize}{\thesection}{1em}{}
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+
+% \providecommand{\tightlist}{%
+%   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\def\tightlist{}
+
+
+
+\usepackage[absolute,overlay]{textpos}
+
+\setmainfont{Arial}
+
+\usepackage[usenames, dvipsnames]{xcolor}
+\definecolor{betterblue}{RGB}{0,105,175}
+\usepackage[xetex, bookmarks, colorlinks, breaklinks, $if(object)$ pdftitle={$object$} $endif$, $if(author)$ pdfauthor=$author$ $endif$]{hyperref}
+\hypersetup{linkcolor=blue, citecolor=blue, filecolor=black, urlcolor=betterblue}
+
+%Margins
+\geometry{a4paper,
+  top=17mm,
+  bottom=17mm,
+  left=17mm,
+  right=17mm,
+}
+\usepackage[norule, hang,flushmargin]{footmisc}
+
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+
+\let\thefootnote\relax\footnote{\scriptsize\color{Gray} $if(phone)$ Tél : $phone$ $endif$ \\
+    $if(mail)$ Mél : $mail$ $endif$ \\
+    $if(address)$ $address$ $endif$}
+
+\begin{textblock*}{6cm}(17mm, 17mm)
+\includegraphics[height=20.5mm, trim = 27mm 25mm 30mm 29mm, clip]{Gouvernement_RVB}
+\end{textblock*}
+
+
+\begin{textblock*}{5cm}[1,0](193mm, 23.5mm)
+\large \raggedleft	\textbf{Direction \\ interministérielle \\ du numérique}
+\end{textblock*}
+
+\begin{textblock*}{5cm}(17mm, 59mm)
+La directrice \\
+$if(ref)$ \footnotesize Réf : $ref$ $endif$
+\end{textblock*}
+
+
+\begin{textblock*}{5cm}[1,0](193mm, 59mm)
+\footnotesize \raggedleft $if(city)$ $city$, $endif$ $if(date)$ le $date$ $endif$
+\end{textblock*}
+
+\vspace*{50mm}
+
+\begin{center}
+\large\textbf{NOTE}
+\end{center}
+
+\begin{center}
+\large à $if(recipient)$ $recipient$ $endif$
+\end{center}
+
+\vspace{30mm}
+\textbf{Objet : $if(object)$ $object$ $endif$}
+
+$if(attachment)$\textbf{PJ : $attachment$}$endif$
+\vspace{5mm}
+
+$body$
+
+\bigskip
+
+$if(author)$
+\begin{flushright}
+% \includegraphics[width=6cm]{signature}\\[.25cm]
+\textbf{$author$}
+$endif$
+\end{flushright}
+\end{document}
