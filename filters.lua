@@ -10,5 +10,6 @@ function Meta(m)
     end
     if m.doctype == nil then
       m.doctype = "NOTE"
+    end
     return m
   end
