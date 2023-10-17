@@ -6,7 +6,10 @@ city: Paris
 address: 20, Avenue de Ségur - 75007 PARIS
 date: 28/09/2023
 ref: 1200001
+doctype: "NOTE"
 object: "Note test"
+institution: "Direction interministérielle du numérique"
+sender: "La directrice"
 recipient: "Madame la Première Ministre"
 ---
 

@@ -8,5 +8,7 @@ function Meta(m)
     if m.address == nil then
       m.address = "20, Avenue de Ségur - 75007 PARIS"
     end
+    if m.doctype == nil then
+      m.doctype = "NOTE"
     return m
   end

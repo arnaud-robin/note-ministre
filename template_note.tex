@@ -60,11 +60,11 @@
 
 
 \begin{textblock*}{5cm}[1,0](193mm, 23.5mm)
-\large \raggedleft	\textbf{Direction \\ interministérielle \\ du numérique}
+$if(institution)$ \large \raggedleft	\textbf{$institution$} $endif$
 \end{textblock*}
 
 \begin{textblock*}{5cm}(17mm, 59mm)
-La directrice \\
+$if(sender)$ $sender$ \\ $endif$
 $if(ref)$ \footnotesize Réf : $ref$ $endif$
 \end{textblock*}
 
@@ -76,7 +76,7 @@ $if(ref)$ \footnotesize Réf : $ref$ $endif$
 \vspace*{50mm}
 
 \begin{center}
-\large\textbf{NOTE}
+$if(doctype)$ \large\textbf{$doctype$} $endif$
 \end{center}
 
 \begin{center}
@@ -97,6 +97,6 @@ $if(author)$
 \begin{flushright}
 % \includegraphics[width=6cm]{signature}\\[.25cm]
 \textbf{$author$}
-$endif$
 \end{flushright}
+$endif$
 \end{document}
